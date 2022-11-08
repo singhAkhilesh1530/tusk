@@ -31,3 +31,19 @@ items[1].textContent = 'Hello Once more';
 items[1].style.fontWeight = 'Bold';
 items[2].style.backgroundColor = 'Yellow';
 items[3].style.backgroundColor = 'Green';
+for(let i = 0; i < items.length; i++){
+    items[i].style.backgroundColor = 'orange';
+}
+
+
+//getElementByTagName();
+const li = document.getElementsByClassName('list-group-item');
+console.log(li);
+console.log(li[1]);
+li[1].textContent = 'Hello Once more';
+li[1].style.fontWeight = 'Bold';
+li[2].style.backgroundColor = 'Yellow';
+li[3].style.backgroundColor = 'Green';
+for(let i = 0; i < li.length; i++){
+    li[i].style.backgroundColor = 'blue';
+}
