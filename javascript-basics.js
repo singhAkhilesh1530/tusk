@@ -47,3 +47,50 @@ console.log(fname);
 console.log(city);
 person.email = 'akhilesh.gmail';
 console.log(person);
+
+
+
+//Array of Objects/Todo
+
+const todo = [
+    {
+        id: 1,
+        task: 'eat',
+        isDone: false
+    },
+
+    {
+        id: 2,
+        task: 'sleep',
+        isDone: true
+    },
+
+    {
+        id: 3,
+        task: 'go',
+        isDone: false
+    }
+];
+console.log(todo[1].task);
+console.log(todo);
+const todoJSON = JSON.stringify(todo);
+console.log(todoJSON);
+for(let i = 0; i < todo.length; i ++){
+    console.log(`id is ${todo[i].id}, task is ${todo[i].task}, is task done ${todo[i].isDone}`)
+}
+for(let todos of todo){
+    console.log(todos);
+}
+todo.forEach(function(todos){
+    console.log(todos);
+});
+const todoText = todo.map(function(todos){
+    return todos.task;
+});
+console.log(todoText);
+const todoFilter = todo.filter(function(todos){
+    return todos.isDone === false;
+}).map(function(todos){
+    return todos.task;
+})
+console.log(todoFilter);
