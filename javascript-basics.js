@@ -48,6 +48,56 @@ console.log(city);
 person.email = 'akhilesh.gmail';
 console.log(person);
 
+//Functions
+
+function convert(temp){
+	return temp + 273;
+}
+
+console.log(convert(35));
+
+function convertKC(temp, conversion){
+	if(conversion == 'K'){
+		return temp + 273;
+	}
+	else if(conversion == 'C'){
+		return temp - 273;
+    }
+}
+
+console.log(convertKC(350, 'C'));
+
+
+//Constructors
+
+function Person(firstName, lastName, rollNo, gender, age){
+    this.firstName = firstName;
+    this.lastName = lastName;
+    this.rollNo = rollNo;
+    this.gender = gender;
+    this.age = new Date(age);
+    this.getFullName = function(){
+        return `${this.firstName} ${this.lastName}`;
+    }
+    this.getAgeYear = function(){
+        return this.age.getFullYear();
+    }
+}
+function eligible(stage){
+    if(p1.getAgeYear() < stage){
+        return 'False';
+    }
+    else{
+        return 'True';
+    }
+}
+const p1 = new Person('aman', 'nath', 12, 'M', '06/10/2002');
+const p2 = new Person('amit', 'thar', 14, 'F', '06/06/2008');
+console.log(`${p1.firstName} ${p1.lastName}`);
+console.log(p1.getAgeYear());
+console.log(p1.getFullName());
+console.log(eligible(13));
+console.log(p1);
 
 
 //Array of Objects/Todo
