@@ -1,3 +1,4 @@
+/*
 //getElementById();
 
 console.dir(document);
@@ -47,3 +48,93 @@ li[3].style.backgroundColor = 'Green';
 for(let i = 0; i < li.length; i++){
     li[i].style.backgroundColor = 'blue';
 }
+
+
+// Single Element Selector
+console.log(document.getElementById('my-form'));
+console.log(document.querySelector('h1'));
+// Multiple Element Selector
+console.log(document.querySelectorAll('.item'));
+console.log(document.getElementsByClassName('item'));
+*/
+
+
+//const itemList = document.querySelector('#items');
+
+//ParentNode
+/*
+console.log(itemList.parentNode);
+itemList.parentNode.style.backgroundColor = '#f4f4f4';
+console.log(itemList.parentNode.parentNode);
+itemList.parentNode.parentNode.style.backgroundColor = 'blue';
+console.log(itemList.parentNode.parentNode.parentNode);
+itemList.parentNode.parentNode.parentNode.style.backgroundColor = 'yellow';
+*/
+
+//ParentElement
+/*
+console.log(itemList.parentElement);
+itemList.parentElement.style.backgroundColor = '#f4f4f4';
+console.log(itemList.parentElement.parentElelment);
+itemList.parentNode.parentNode.style.backgroundColor = 'blue';
+console.log(itemList.parentElement.parentElement.parentElement);
+itemList.parentNode.parentElement.parentElement.style.backgroundColor = 'yellow';
+*/
+
+//childNodes
+/*
+console.log(itemList.childNodes);
+*/
+
+//Children
+/*
+console.log(itemList.children);
+console.log(itemList.children[1]);
+itemList.children[1].style.backgroundColor = 'yellow';
+// firstChild/lastChild
+console.log(itemList.firstChild);
+itemList.firstChild.textContent = 'Arree';
+console.log(itemList.lastChild);
+itemList.lastChild.textContent = 'Bhaaii';
+// firstElementChild/lastElementChild
+console.log(itemList.firstElementChild);
+itemList.firstElementChild.textContent = 'Hey';
+console.log(itemList.lastElementChild);
+itemList.lastElementChild.textContent = 'Bro';
+*/
+
+//Siblings
+/*
+//nextSibling
+console.log(itemList.nextSibling);
+//nextElementSibling
+console.log(itemList.nextElementSibling);
+//previousSibling
+console.log(itemList.previousSibling);
+//previousElementSibling
+console.log(itemList.previousElementSibling);
+itemList.previousElementSibling.style.color = 'green';
+*/
+
+
+// Create Element
+const newDiv  = document.createElement('div');
+// AddClass
+newDiv.className = 'hello';
+// Add id
+newDiv.id = 'hello1';
+// AddAttribute
+newDiv.setAttribute('title', 'Hello Div',);
+
+// Create text node
+const newDivText = document.createTextNode('Hello World');
+// Addtext to newDiv
+newDiv.appendChild(newDivText);
+
+const container = document.querySelector('header .container');
+const h1 = document.querySelector('header h1');
+
+console.log(newDiv);
+newDiv.style.fontSize = '30px';
+
+container.insertBefore(newDiv, h1);
