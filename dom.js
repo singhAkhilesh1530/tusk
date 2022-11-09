@@ -116,7 +116,7 @@ console.log(itemList.previousElementSibling);
 itemList.previousElementSibling.style.color = 'green';
 */
 
-
+/*
 // Create Element
 const newDiv  = document.createElement('div');
 // AddClass
@@ -138,3 +138,55 @@ console.log(newDiv);
 newDiv.style.fontSize = '30px';
 
 container.insertBefore(newDiv, h1);
+*/
+
+
+const form = document.getElementById('addForm');
+const itemList = document.getElementById('items');
+const filter = document.getElementById('filter');
+
+// new Add Item to List
+form.addEventListener('submit', addItem);
+
+//Delete an Iem from List
+itemList.addEventListener('click', removeItem);
+
+//filter items
+filter.addEventListener('keyup', filterItems);
+
+function addItem(e){
+    e.preventDefault();
+
+    //Get Input Value
+    const newItem = document.getElementById('item').value;
+    //Create new li element
+    const li = document.createElement('li');
+    //Add class to list item
+    li.className = 'list-group-item';
+    //Add text node to list
+    li.appendChild(document.createTextNode(newItem));
+    //Create Del button
+    const delbutton = document.createElement('button');
+    //Add class to button
+    delbutton.className = 'btn btn-danger btn-sm float-right delete';
+    // Add button to list
+    delbutton.appendChild(document.createTextNode('X'));
+    //Add button to list
+    li.appendChild(delbutton);
+    //Add new list element to list items
+    itemList.appendChild(li);
+}
+
+
+
+function removeItem(e){
+    e.preventDefault();
+    if(e.target.classList.contains('delete')){
+        if(confirm('Are you Sure!')){
+            const li = e.target.parentElement;
+            itemList.removeChild(li);
+        }
+    }
+}
+
+
