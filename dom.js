@@ -190,3 +190,19 @@ function removeItem(e){
 }
 
 
+function filterItems(e){
+    //convert to lowercase
+    const text = e.target.value.toLowerCase();
+    const items = itemList.getElementsByTagName('li');
+    console.log(items);
+    //convert to an array
+    Array.from(items).forEach(function(item){
+        const itemName = item.firstChild.textContent;
+        if(itemName.toLowerCase().indexOf(text) != -1){
+            item.style.display = 'block';
+        }
+        else{
+            item.style.display = 'none';
+        }
+    });
+}
